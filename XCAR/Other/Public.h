@@ -61,8 +61,12 @@
 // 热帖 limit=20&offset=0&ver=6.2
 #define kGetHotPostURL @"http://my.xcar.com.cn/app/6/getHotPostList.php"
 
-/** 3.获取所有车品牌 */
+/** 4.获取所有车品牌 */
 #define kGetAllXCarBrandsURL @"http://mi.xcar.com.cn/interface/xcarapp/getBrands.php"
+
+/** 4.1 各车品牌的车型 */
+// 参数：brandId 1 = Audi 56 = Aston Martin （id号不是按字母来的）
+#define kGetCarSubBrandsURL @"http://mi.xcar.com.cn/interface/xcarapp/getSeriesByBrandId.php"
 
 #define kGetSpecialSaleURL @"http://mi.xcar.com.cn/interface/xcarapp/getSpecialSale.php?cityId=348&deviceId=668B4D65-724E-461E-A389-905F158A0871&provinceId=30&uid=7916227"
 
@@ -86,7 +90,7 @@
  subBrandName 分类名字（华晨宝马、宝马(进口)、宝马M）
  */
 
-/** 4.获取降价信息 */
+/** 5.获取降价信息 */
 // 降价
 // brandId = 0; cityId = 475; provincedId = 1; seriesId = 0; sortType = 1;
 // sortType 1 降幅最大 2 价格最低 3 价格最高
@@ -103,7 +107,6 @@
 // 475 = Beijing
 // getRakingList
 // 车有惠
-
 #define kGetSalesByCityId @"http://mi.xcar.com.cn/interface/xcarapp/getSaleListByCityId.php"
 
 
@@ -111,20 +114,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
 
 /** 汽车之家 */
 /** 最新 */

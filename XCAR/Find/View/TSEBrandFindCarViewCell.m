@@ -29,6 +29,7 @@ static NSString * const kCellIdentifier = @"BRANDFINDCAR";
     if (self) {
         // 设置cell的背景色
         self.backgroundColor = [UIColor clearColor];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
         self.iconView = [[UIImageView alloc] init];
         CGFloat iconViewX = 15.0;

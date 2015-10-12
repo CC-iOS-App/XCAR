@@ -10,7 +10,6 @@
 
 @interface TSEShareEventSheet : UIView
 
-- (instancetype)initWithHeight:(CGFloat)height;
 - (void)showInView:(UIViewController *)showVC;
 
 @end

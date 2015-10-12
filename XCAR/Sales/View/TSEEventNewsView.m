@@ -243,11 +243,7 @@
  *  分享
  */
 - (void)eventShareBtnClicked {
-    NSLog(@"action sheet");
-//    UIActionSheet *shareSheet = [[UIActionSheet alloc] initWithTitle:@"分享到" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"复制链接", nil];
-//    [shareSheet showInView:self];
-    
-    TSEShareEventSheet *sheetView = [[TSEShareEventSheet alloc] initWithHeight:0];
+    TSEShareEventSheet *sheetView = [[TSEShareEventSheet alloc] init];
     [sheetView showInView:nil];
 }
 

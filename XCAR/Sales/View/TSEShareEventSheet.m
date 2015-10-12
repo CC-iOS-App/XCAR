@@ -45,7 +45,7 @@
 
 @implementation TSEShareEventSheet
 
-- (instancetype)initWithHeight:(CGFloat)height {
+- (instancetype)init {
     self = [super init];
     if (self) {
         
@@ -180,6 +180,9 @@
     }];
 }
 
+/**
+ * 全屏展示
+ */
 - (void)showInView:(UIViewController *)showVC {
     if(!showVC){
         // 获取当前视图的控制器

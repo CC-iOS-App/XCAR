@@ -53,6 +53,10 @@
 		A56372991BBFF7A700DE9FCF /* TSEHotPostCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A56372981BBFF7A700DE9FCF /* TSEHotPostCellFrame.m */; settings = {ASSET_TAGS = (); }; };
 		A563729C1BBFF8F300DE9FCF /* TSEHotPostsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A563729B1BBFF8F300DE9FCF /* TSEHotPostsView.m */; settings = {ASSET_TAGS = (); }; };
 		A563729F1BBFFA4D00DE9FCF /* TSEHotPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A563729E1BBFFA4D00DE9FCF /* TSEHotPostCell.m */; settings = {ASSET_TAGS = (); }; };
+		A57369C41BC9214D00B438D9 /* TSESubBrandCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57369C31BC9214D00B438D9 /* TSESubBrandCarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A58246A11BC7BB680022F1B6 /* TSESubBrandCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A58246A01BC7BB680022F1B6 /* TSESubBrandCarCell.m */; settings = {ASSET_TAGS = (); }; };
+		A58246A71BC8DA950022F1B6 /* TSESubBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = A58246A61BC8DA950022F1B6 /* TSESubBrand.m */; settings = {ASSET_TAGS = (); }; };
+		A58246AA1BC8DBC70022F1B6 /* TSESeries.m in Sources */ = {isa = PBXBuildFile; fileRef = A58246A91BC8DBC70022F1B6 /* TSESeries.m */; settings = {ASSET_TAGS = (); }; };
 		A5B019A51BBE1B03003E00A6 /* TSEChoicePostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B019A41BBE1B03003E00A6 /* TSEChoicePostsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A5B019A81BBE1B17003E00A6 /* TSEHotPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B019A71BBE1B17003E00A6 /* TSEHotPostsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A5B019AB1BBE1B34003E00A6 /* TSEFindFourmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B019AA1BBE1B34003E00A6 /* TSEFindFourmViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -192,6 +196,14 @@
 		A563729B1BBFF8F300DE9FCF /* TSEHotPostsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEHotPostsView.m; sourceTree = "<group>"; };
 		A563729D1BBFFA4D00DE9FCF /* TSEHotPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEHotPostCell.h; sourceTree = "<group>"; };
 		A563729E1BBFFA4D00DE9FCF /* TSEHotPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEHotPostCell.m; sourceTree = "<group>"; };
+		A57369C21BC9214D00B438D9 /* TSESubBrandCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESubBrandCarViewController.h; sourceTree = "<group>"; };
+		A57369C31BC9214D00B438D9 /* TSESubBrandCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESubBrandCarViewController.m; sourceTree = "<group>"; };
+		A582469F1BC7BB680022F1B6 /* TSESubBrandCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESubBrandCarCell.h; sourceTree = "<group>"; };
+		A58246A01BC7BB680022F1B6 /* TSESubBrandCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESubBrandCarCell.m; sourceTree = "<group>"; };
+		A58246A51BC8DA950022F1B6 /* TSESubBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESubBrand.h; sourceTree = "<group>"; };
+		A58246A61BC8DA950022F1B6 /* TSESubBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESubBrand.m; sourceTree = "<group>"; };
+		A58246A81BC8DBC70022F1B6 /* TSESeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESeries.h; sourceTree = "<group>"; };
+		A58246A91BC8DBC70022F1B6 /* TSESeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESeries.m; sourceTree = "<group>"; };
 		A5B019A31BBE1B03003E00A6 /* TSEChoicePostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEChoicePostsViewController.h; sourceTree = "<group>"; };
 		A5B019A41BBE1B03003E00A6 /* TSEChoicePostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEChoicePostsViewController.m; sourceTree = "<group>"; };
 		A5B019A61BBE1B17003E00A6 /* TSEHotPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEHotPostsViewController.h; sourceTree = "<group>"; };
@@ -524,6 +536,8 @@
 			children = (
 				A556393B1BC14AE1002F8455 /* TSEBrandFindCarViewController.h */,
 				A556393C1BC14AE1002F8455 /* TSEBrandFindCarViewController.m */,
+				A57369C21BC9214D00B438D9 /* TSESubBrandCarViewController.h */,
+				A57369C31BC9214D00B438D9 /* TSESubBrandCarViewController.m */,
 				A556393E1BC14B19002F8455 /* TSEConditionFindCarViewController.h */,
 				A556393F1BC14B19002F8455 /* TSEConditionFindCarViewController.m */,
 			);
@@ -539,6 +553,10 @@
 				A55C293B1BC1E67C0016547B /* TSEBrandCar.m */,
 				A55C293D1BC1E9780016547B /* TSEBrand.h */,
 				A55C293E1BC1E9780016547B /* TSEBrand.m */,
+				A58246A51BC8DA950022F1B6 /* TSESubBrand.h */,
+				A58246A61BC8DA950022F1B6 /* TSESubBrand.m */,
+				A58246A81BC8DBC70022F1B6 /* TSESeries.h */,
+				A58246A91BC8DBC70022F1B6 /* TSESeries.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -552,6 +570,8 @@
 				A52294851BC560810029C76B /* TSEFindCarSectionView.m */,
 				A55C29401BC204480016547B /* TSEBrandFindCarViewCell.h */,
 				A55C29411BC204480016547B /* TSEBrandFindCarViewCell.m */,
+				A582469F1BC7BB680022F1B6 /* TSESubBrandCarCell.h */,
+				A58246A01BC7BB680022F1B6 /* TSESubBrandCarCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -890,6 +910,7 @@
 				A55639281BC0CC92002F8455 /* TSEDepreciateNewsCellFrame.m in Sources */,
 				A563729C1BBFF8F300DE9FCF /* TSEHotPostsView.m in Sources */,
 				A52059A41BBF87C300AA57DC /* TSEChoicePostsView.m in Sources */,
+				A58246A71BC8DA950022F1B6 /* TSESubBrand.m in Sources */,
 				A5BE0B3C1BB2883400EF298D /* TSEProfileHeaderView.m in Sources */,
 				A5C7D4701BAF8FE7001BF201 /* TSEMainController.m in Sources */,
 				A54221F61BB05199008983EE /* TSEEventNewsCell.m in Sources */,
@@ -905,6 +926,7 @@
 				A54221F91BB051B8008983EE /* TSEEventNewsView.m in Sources */,
 				A52294861BC560810029C76B /* TSEFindCarSectionView.m in Sources */,
 				A5C7D4E11BAFA464001BF201 /* TSELatestNewsViewController.m in Sources */,
+				A58246A11BC7BB680022F1B6 /* TSESubBrandCarCell.m in Sources */,
 				A55639371BC13C81002F8455 /* TSEFindCarHeaderView.m in Sources */,
 				A55639221BC0B4F4002F8455 /* TSEDepreciateTopView.m in Sources */,
 				A55C293F1BC1E9780016547B /* TSEBrand.m in Sources */,
@@ -921,8 +943,10 @@
 				A5C7D4EA1BAFA508001BF201 /* TSEEvaluatingViewController.m in Sources */,
 				A556392E1BC0CCDF002F8455 /* TSEDepreciateNewsView.m in Sources */,
 				A56372991BBFF7A700DE9FCF /* TSEHotPostCellFrame.m in Sources */,
+				A57369C41BC9214D00B438D9 /* TSESubBrandCarViewController.m in Sources */,
 				A5C7D4931BAF9127001BF201 /* TSEProfileViewController.m in Sources */,
 				A54221E41BB020EA008983EE /* TSEApplyViewController.m in Sources */,
+				A58246AA1BC8DBC70022F1B6 /* TSESeries.m in Sources */,
 				A556393D1BC14AE1002F8455 /* TSEBrandFindCarViewController.m in Sources */,
 				A542220B1BB13ADC008983EE /* TSEDiscountNewsCell.m in Sources */,
 				A5C7D4751BAF8FE7001BF201 /* AppDelegate.m in Sources */,

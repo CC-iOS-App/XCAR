@@ -17,9 +17,11 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     TSEMainController *main = [[TSEMainController alloc] init];
     self.window.rootViewController = main;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.window.clipsToBounds = YES;
     [self.window setBackgroundColor:TSEColor(244, 244, 244)];
     [self.window makeKeyAndVisible];
     

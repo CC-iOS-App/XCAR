@@ -10,4 +10,9 @@
 
 @implementation TSEBrand
 
+// key替换，ID -> id
++ (NSDictionary *)replacedKeyFromPropertyName {
+    return @{@"ID" : @"id"};
+}
+
 @end

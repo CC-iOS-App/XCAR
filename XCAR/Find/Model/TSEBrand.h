@@ -16,4 +16,7 @@
 /** 车型名字 */
 @property (nonatomic, copy) NSString *name;
 
+/** 子品牌id */
+@property (nonatomic, copy) NSString *ID;
+
 @end

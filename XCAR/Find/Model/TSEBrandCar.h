@@ -22,4 +22,5 @@
 /** 品牌首字母 */
 @property (nonatomic, copy) NSString *letter;
 
+
 @end

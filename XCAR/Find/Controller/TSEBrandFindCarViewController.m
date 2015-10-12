@@ -16,6 +16,9 @@
 #import "TSEFindCarHeaderView.h"
 #import "TSEBrandFindCarViewCell.h"
 #import "TSEFindCarSectionView.h"
+
+#import "TSESubBrandCarViewController.h"
+
 #import "TSEBrandCar.h"
 #import "TSEBrand.h"
 
@@ -25,8 +28,11 @@
 
 @property (nonatomic, weak) TSEFindCarHeaderView *headerView;
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, weak) UIView *bgView;
 
-@property (nonatomic, strong) NSArray *series;
+/** 车品牌 */
+@property (nonatomic, strong) NSArray *brands;
 @property (nonatomic, strong) NSArray *specialSales;
 
 @end
@@ -47,12 +53,10 @@ static NSString * const CellIdentifier = @"BrandCar";
 - (void)requestSpecialSalesDate {
     [TSEHttpTool get:kGetSpecialSaleURL params:nil success:^(id json) {
 //        TSELog(@"%@", json);
-        
         // 获取销售新闻
         TSEFindCarSpecialSales *specialSales = [TSEFindCarSpecialSales objectWithKeyValues:json];
         // 设置tableView header
         [self setupTableHeaderViewWithFocusPosts:specialSales];
-        
     } failure:^(NSError *error) {
         TSELog(@"failed-------%@", error);
     }];
@@ -61,11 +65,9 @@ static NSString * const CellIdentifier = @"BrandCar";
 - (void)requestBrandCarDate {
     [TSEHttpTool get:kGetAllXCarBrandsURL params:nil success:^(id json) {
 //        TSELog(@"%@", json);
-        
         // 获取各车品牌
-        self.series = [TSEBrandCar objectArrayWithKeyValuesArray:json[@"letters"]];
+        self.brands = [TSEBrandCar objectArrayWithKeyValuesArray:json[@"letters"]];
         [self.tableView reloadData];
-        
     } failure:^(NSError *error) {
         TSELog(@"failed-------%@", error);
     }];
@@ -73,18 +75,18 @@ static NSString * const CellIdentifier = @"BrandCar";
 
 #pragma mark - Table view datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.series count];
+    return [self.brands count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    TSEBrandCar *car = self.series[section];
+    TSEBrandCar *car = self.brands[section];
     return car.brandNum;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TSEBrandFindCarViewCell *cell = [TSEBrandFindCarViewCell cellWithTableView:tableView];
     // 3.设置cell的属性
-    TSEBrandCar *car = self.series[indexPath.section];
+    TSEBrandCar *car = self.brands[indexPath.section];
     TSEBrand *brand = car.brands[indexPath.row];
     
     [cell.brandLabel setText:brand.name];
@@ -94,8 +96,33 @@ static NSString * const CellIdentifier = @"BrandCar";
 }
 
 #pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 创建一个新的窗口，以此窗口来容纳显示子品牌的控制器
+    UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(ScreenWidth, 50.5, ScreenWidth / 4 * 3, ScreenHeight - 120.0)];
+    window.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.7];
+    window.windowLevel = UIWindowLevelNormal;
+    window.hidden = NO;
+    [window makeKeyAndVisible];
+    TSESubBrandCarViewController *subBrandCtr = [[TSESubBrandCarViewController alloc] initWithIndexPath:indexPath brands:self.brands];
+    window.rootViewController = subBrandCtr;
+    self.window = window;
+    
+    // 设置背景阴影
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth, ScreenHeight)];
+    [UIView animateWithDuration:0.25 animations:^{
+        [window setFrame:CGRectMake(ScreenWidth - ScreenWidth / 4 * 3, 50.5, ScreenWidth / 4 * 3, ScreenHeight - 120.0)];
+        [bgView setFrame:self.view.bounds];
+    }];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    // 点击手势 销毁当前显示子品牌的窗口和背景阴影
+    UITapGestureRecognizer *tap  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [bgView addGestureRecognizer:tap];
+    [self.view addSubview:bgView];
+    self.bgView = bgView;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    TSEBrandCar *car = self.series[section];
+    TSEBrandCar *car = self.brands[section];
     TSEFindCarSectionView *headerView = [[TSEFindCarSectionView alloc] initWithSectionTitles:car.letter];
     return headerView;
 }
@@ -113,14 +140,10 @@ static NSString * const CellIdentifier = @"BrandCar";
  */
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     NSMutableArray *indexTitles = [NSMutableArray array];
-    for (TSEBrandCar *car in self.series) {
+    for (TSEBrandCar *car in self.brands) {
         [indexTitles addObject:car.letter];
     }
     return indexTitles;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 }
 
 #pragma mark - private method
@@ -141,6 +164,22 @@ static NSString * const CellIdentifier = @"BrandCar";
     TSEFindCarHeaderView *headerView = [[TSEFindCarHeaderView alloc] initHeaderViewWithSeriesImage:specialSales.seriesImage carName:specialSales.carName cheapRange:specialSales.cheapRange dealerName:specialSales.dealerName];
     [headerView setFrame:CGRectMake(0.0, 0.0, ScreenWidth, headerView.cellHeight + 15)];
     self.tableView.tableHeaderView = headerView;
+}
+
+/**
+ *  点击手势 销毁当前显示子品牌的窗口和背景阴影
+ */
+- (void)tapAction{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bgView.alpha = 0;
+        [self.window setFrame:CGRectMake(ScreenWidth, 50.5, ScreenWidth / 4 * 3, ScreenHeight - 120.0)];
+        [self.bgView setFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth, ScreenHeight)];
+    } completion:^(BOOL finished) {
+        [self.bgView removeFromSuperview];
+        [self.window resignKeyWindow];
+        self.window  = nil;
+        self.bgView = nil;
+    }];
 }
 
 @end
