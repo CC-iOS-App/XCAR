@@ -7,6 +7,10 @@
 //
 
 #import "TSESubBrandCarViewController.h"
+
+#import "TSESeriesInfoViewController.h"
+#import "TSENavigationController.h"
+#import "TSEBarButtonItem.h"
 #import "TSESubBrandCarCell.h"
 #import "TSEHttpTool.h"
 #import "Public.h"
@@ -21,6 +25,8 @@
 #import "TSESeries.h"
 
 @interface TSESubBrandCarViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) UIWindow *window;
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) NSArray *series;
@@ -95,6 +101,22 @@
 #pragma mark - Table View delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TSELog(@"haha");
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth, ScreenHeight)];
+    window.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.7];
+    window.windowLevel = UIWindowLevelNormal;
+    window.hidden = NO;
+    [window makeKeyAndVisible];
+    TSESeriesInfoViewController *seriesVC = [[TSESeriesInfoViewController alloc] initWithIndexPath:indexPath series:self.series];
+    TSENavigationController *nav = [[TSENavigationController alloc] initWithRootViewController:seriesVC];
+    seriesVC.title = @"车系信息";
+    seriesVC.navigationItem.leftBarButtonItem = [TSEBarButtonItem barButtonWithImage:@"nav_fanhui" title:@"返回" target:self action:@selector(backToSubBrandCar)];;
+    seriesVC.navigationItem.rightBarButtonItem = [TSEBarButtonItem barButtonWithTitle:@"更多" target:self action:@selector(moreButtonClick)];
+    [UIView animateWithDuration:0.25 animations:^{
+        [window setFrame:CGRectMake(0.0, 0.0, ScreenWidth, ScreenHeight)];
+    }];
+    window.rootViewController = nav;
+    self.window = window;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,6 +150,19 @@
     [tableView setBackgroundColor:TSEColor(248, 248, 248)];
     [self.view addSubview:tableView];
     self.tableView = tableView;
+}
+
+- (void)backToSubBrandCar {
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.window setFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth, ScreenHeight)];
+    } completion:^(BOOL finished) {
+        [self.window resignKeyWindow];
+        self.window  = nil;
+    }];
+}
+
+- (void)moreButtonClick {
+    TSELog(@"more button clicked");
 }
 
 @end

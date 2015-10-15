@@ -62,13 +62,13 @@ static NSString *const CellIdentifier = @"FindFourm";
         
         btn.tag = i;
         if (btn.tag == 0) {
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clubBtnClicked:)];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clubIconClicked:)];
             [btn addGestureRecognizer:tap];
         } else if (btn.tag == 1) {
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diFangBtnClicked:)];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diFangIconClicked:)];
             [btn addGestureRecognizer:tap];
         } else if (btn.tag == 2) {
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lifeClicked:)];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lifeIconClicked:)];
             [btn addGestureRecognizer:tap];
         }
         [self addSubview:btn];
@@ -129,16 +129,16 @@ static NSString *const CellIdentifier = @"FindFourm";
 }
 
 
-- (void)clubBtnClicked:(UITapGestureRecognizer *)gr {
-    TSELog(@"clubBtnClicked");
+- (void)clubIconClicked:(UITapGestureRecognizer *)gr {
+    TSELog(@"clubIconClicked");
 }
 
-- (void)diFangBtnClicked:(UITapGestureRecognizer *)gr {
+- (void)diFangIconClicked:(UITapGestureRecognizer *)gr {
     TSELog(@"diFangBtnClicked");
 }
 
-- (void)lifeClicked:(UITapGestureRecognizer *)gr{
-    TSELog(@"lifeClicked");
+- (void)lifeIconClicked:(UITapGestureRecognizer *)gr{
+    TSELog(@"lifeIconClicked");
 }
 
 #pragma mark - lazy load

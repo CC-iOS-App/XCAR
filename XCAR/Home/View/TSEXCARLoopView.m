@@ -18,7 +18,6 @@
 @property (nonatomic, assign) int currentPage;
 @property (nonatomic, weak) UIPageControl *pageControl;
 @property (nonatomic, weak) UIScrollView *scrollView;
-
 @property (nonatomic, weak) UIImageView *placeHodlerView;
 
 @end
@@ -69,6 +68,9 @@
 }
 
 #pragma mark - Public Methods
+/**
+ *  添加pageControl
+ */
 - (void)addPageControl {
     CGFloat height = self.frame.size.height;
     CGFloat width = self.frame.size.width;
@@ -90,7 +92,7 @@
 }
 
 - (void)autoPlayToNextPage {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(autoPlayToNextPage) object:nil];
+//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(autoPlayToNextPage) object:nil];
     [self.scrollView setContentOffset:CGPointMake(self.frame.size.width * 2, 0) animated:YES];
     [self performSelector:@selector(autoPlayToNextPage) withObject:nil afterDelay:_timeInterval];
 }
@@ -100,11 +102,12 @@
         _currentImages = [[NSMutableArray alloc] init];
     }
     [_currentImages removeAllObjects];
+    // 获取当前图片数量
     NSInteger count = self.images.count;
-    int i = (int)(_currentPage + count - 1)%count;
+    int i = (int)(_currentPage + count - 1) % count;
     [_currentImages addObject:self.images[i]];
     [_currentImages addObject:self.images[_currentPage]];
-    i = (int)(_currentPage + 1)%count;
+    i = (int)(_currentPage + 1) % count;
     [_currentImages addObject:self.images[i]];
     return _currentImages;
 }
@@ -119,7 +122,7 @@
         imageView.image = self.currentImages[i];
         [scrollView addSubview:imageView];
     }
-    scrollView.contentSize = CGSizeMake(3*width, height);
+    scrollView.contentSize = CGSizeMake(3 * width, height);
     scrollView.contentOffset = CGPointMake(width, 0);
     scrollView.pagingEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;

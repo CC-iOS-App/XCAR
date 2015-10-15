@@ -68,8 +68,14 @@
 // 参数：brandId 1 = Audi 56 = Aston Martin （id号不是按字母来的）
 #define kGetCarSubBrandsURL @"http://mi.xcar.com.cn/interface/xcarapp/getSeriesByBrandId.php"
 
-#define kGetSpecialSaleURL @"http://mi.xcar.com.cn/interface/xcarapp/getSpecialSale.php?cityId=348&deviceId=668B4D65-724E-461E-A389-905F158A0871&provinceId=30&uid=7916227"
+/** 4.2 车型新闻 */
+// 参数：seriesId (2365) / uid
+#define SERIESID @"seriesId"
+#define kGetSeriesInfoNewsURL @"http://mi.xcar.com.cn/interface/xcarapp/getSeriesInfoNew.php"
 
+// 参数：action=1， cityId=475， dataType=4，deviceId=668B4D65-724E-461E-A389-905F158A0871
+// seriesId=2365， uid
+#define kGetSpecialSaleURL @"http://mi.xcar.com.cn/interface/xcarapp/getSpecialSale.php"
 
 #define PARAM @"param"
 /**
@@ -108,7 +114,6 @@
 // getRakingList
 // 车有惠
 #define kGetSalesByCityId @"http://mi.xcar.com.cn/interface/xcarapp/getSaleListByCityId.php"
-
 
 
 

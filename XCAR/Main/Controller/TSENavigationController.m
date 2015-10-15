@@ -24,7 +24,7 @@
 
 - (void)setupNavigationBarTheme {
     UINavigationBar *navBar = [UINavigationBar appearance];
-    NSDictionary *attrNavBar = @{NSFontAttributeName : [UIFont systemFontOfSize:18.0f], NSForegroundColorAttributeName : [UIColor whiteColor]};
+    NSDictionary *attrNavBar = @{NSFontAttributeName : [UIFont systemFontOfSize:18.0f], NSForegroundColorAttributeName : TSEColor(41, 51, 57)};
     [navBar setTitleTextAttributes:attrNavBar];
     [navBar setBackgroundColor:TSEColor(248, 248, 248)];
 }

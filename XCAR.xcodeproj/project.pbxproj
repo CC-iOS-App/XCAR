@@ -37,7 +37,6 @@
 		A55639371BC13C81002F8455 /* TSEFindCarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55639361BC13C81002F8455 /* TSEFindCarHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		A556393A1BC14188002F8455 /* TSEFindCarSpecialSales.m in Sources */ = {isa = PBXBuildFile; fileRef = A55639391BC14188002F8455 /* TSEFindCarSpecialSales.m */; settings = {ASSET_TAGS = (); }; };
 		A556393D1BC14AE1002F8455 /* TSEBrandFindCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A556393C1BC14AE1002F8455 /* TSEBrandFindCarViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A55639401BC14B19002F8455 /* TSEConditionFindCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A556393F1BC14B19002F8455 /* TSEConditionFindCarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A55C293C1BC1E67C0016547B /* TSEBrandCar.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C293B1BC1E67C0016547B /* TSEBrandCar.m */; settings = {ASSET_TAGS = (); }; };
 		A55C293F1BC1E9780016547B /* TSEBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C293E1BC1E9780016547B /* TSEBrand.m */; settings = {ASSET_TAGS = (); }; };
 		A55C29421BC204480016547B /* TSEBrandFindCarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C29411BC204480016547B /* TSEBrandFindCarViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +53,7 @@
 		A563729C1BBFF8F300DE9FCF /* TSEHotPostsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A563729B1BBFF8F300DE9FCF /* TSEHotPostsView.m */; settings = {ASSET_TAGS = (); }; };
 		A563729F1BBFFA4D00DE9FCF /* TSEHotPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A563729E1BBFFA4D00DE9FCF /* TSEHotPostCell.m */; settings = {ASSET_TAGS = (); }; };
 		A57369C41BC9214D00B438D9 /* TSESubBrandCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57369C31BC9214D00B438D9 /* TSESubBrandCarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A57E16311BCF96FC007D65D7 /* TSEConditionFindCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E16301BCF96FC007D65D7 /* TSEConditionFindCarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A58246A11BC7BB680022F1B6 /* TSESubBrandCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A58246A01BC7BB680022F1B6 /* TSESubBrandCarCell.m */; settings = {ASSET_TAGS = (); }; };
 		A58246A71BC8DA950022F1B6 /* TSESubBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = A58246A61BC8DA950022F1B6 /* TSESubBrand.m */; settings = {ASSET_TAGS = (); }; };
 		A58246AA1BC8DBC70022F1B6 /* TSESeries.m in Sources */ = {isa = PBXBuildFile; fileRef = A58246A91BC8DBC70022F1B6 /* TSESeries.m */; settings = {ASSET_TAGS = (); }; };
@@ -61,6 +61,9 @@
 		A5B019A81BBE1B17003E00A6 /* TSEHotPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B019A71BBE1B17003E00A6 /* TSEHotPostsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A5B019AB1BBE1B34003E00A6 /* TSEFindFourmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B019AA1BBE1B34003E00A6 /* TSEFindFourmViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A5B019AE1BBE2007003E00A6 /* TSEChoiceFocusPost.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B019AD1BBE2007003E00A6 /* TSEChoiceFocusPost.m */; settings = {ASSET_TAGS = (); }; };
+		A5B396231BCBC921000BEC0C /* TSESeriesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B396221BCBC921000BEC0C /* TSESeriesInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A5B396261BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B396251BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		A5B396291BCBD3D5000BEC0C /* TSESeriesInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B396281BCBD3D5000BEC0C /* TSESeriesInfo.m */; settings = {ASSET_TAGS = (); }; };
 		A5B732F81BAFAE6D00DDEFB5 /* TSEHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B732F71BAFAE6D00DDEFB5 /* TSEHttpTool.m */; };
 		A5B7337F1BAFC59000DDEFB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B7337E1BAFC59000DDEFB5 /* SystemConfiguration.framework */; };
 		A5B733811BAFC5A200DDEFB5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B733801BAFC5A200DDEFB5 /* CFNetwork.framework */; };
@@ -70,6 +73,11 @@
 		A5BE0B3C1BB2883400EF298D /* TSEProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B3B1BB2883400EF298D /* TSEProfileHeaderView.m */; };
 		A5BE0B421BB2B20B00EF298D /* TSEProfileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B411BB2B20B00EF298D /* TSEProfileCollectionCell.m */; };
 		A5BE0B481BB2EFDA00EF298D /* TSEXCARLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B471BB2EFDA00EF298D /* TSEXCARLoopView.m */; };
+		A5BF08A71BCC9A66005D8AA8 /* TSESaleSubSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF08A61BCC9A66005D8AA8 /* TSESaleSubSeries.m */; settings = {ASSET_TAGS = (); }; };
+		A5BF08AA1BCC9CAF005D8AA8 /* TSECarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF08A91BCC9CAF005D8AA8 /* TSECarInfo.m */; settings = {ASSET_TAGS = (); }; };
+		A5BF08AD1BCCE1F4005D8AA8 /* TSECarInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF08AC1BCCE1F4005D8AA8 /* TSECarInfoView.m */; settings = {ASSET_TAGS = (); }; };
+		A5BF08B01BCCE20C005D8AA8 /* TSECarInfoCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF08AF1BCCE20C005D8AA8 /* TSECarInfoCellFrame.m */; settings = {ASSET_TAGS = (); }; };
+		A5BF08B31BCCE235005D8AA8 /* TSECarInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF08B21BCCE235005D8AA8 /* TSECarInfoCell.m */; settings = {ASSET_TAGS = (); }; };
 		A5C1E6951BB3DCEC0031EAD7 /* TSEHomeViewNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C1E6941BB3DCEC0031EAD7 /* TSEHomeViewNewsCell.m */; };
 		A5C1E6981BB3DD080031EAD7 /* TSEHomeViewNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C1E6971BB3DD080031EAD7 /* TSEHomeViewNewsView.m */; };
 		A5C1E69B1BB3DD390031EAD7 /* TSEHomeViewNewsCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C1E69A1BB3DD390031EAD7 /* TSEHomeViewNewsCellFrame.m */; };
@@ -163,8 +171,6 @@
 		A55639391BC14188002F8455 /* TSEFindCarSpecialSales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEFindCarSpecialSales.m; sourceTree = "<group>"; };
 		A556393B1BC14AE1002F8455 /* TSEBrandFindCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEBrandFindCarViewController.h; sourceTree = "<group>"; };
 		A556393C1BC14AE1002F8455 /* TSEBrandFindCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEBrandFindCarViewController.m; sourceTree = "<group>"; };
-		A556393E1BC14B19002F8455 /* TSEConditionFindCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEConditionFindCarViewController.h; sourceTree = "<group>"; };
-		A556393F1BC14B19002F8455 /* TSEConditionFindCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEConditionFindCarViewController.m; sourceTree = "<group>"; };
 		A55C293A1BC1E67C0016547B /* TSEBrandCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEBrandCar.h; sourceTree = "<group>"; };
 		A55C293B1BC1E67C0016547B /* TSEBrandCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEBrandCar.m; sourceTree = "<group>"; };
 		A55C293D1BC1E9780016547B /* TSEBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEBrand.h; sourceTree = "<group>"; };
@@ -198,6 +204,8 @@
 		A563729E1BBFFA4D00DE9FCF /* TSEHotPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEHotPostCell.m; sourceTree = "<group>"; };
 		A57369C21BC9214D00B438D9 /* TSESubBrandCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESubBrandCarViewController.h; sourceTree = "<group>"; };
 		A57369C31BC9214D00B438D9 /* TSESubBrandCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESubBrandCarViewController.m; sourceTree = "<group>"; };
+		A57E162F1BCF96FC007D65D7 /* TSEConditionFindCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEConditionFindCarViewController.h; sourceTree = "<group>"; };
+		A57E16301BCF96FC007D65D7 /* TSEConditionFindCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEConditionFindCarViewController.m; sourceTree = "<group>"; };
 		A582469F1BC7BB680022F1B6 /* TSESubBrandCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESubBrandCarCell.h; sourceTree = "<group>"; };
 		A58246A01BC7BB680022F1B6 /* TSESubBrandCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESubBrandCarCell.m; sourceTree = "<group>"; };
 		A58246A51BC8DA950022F1B6 /* TSESubBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESubBrand.h; sourceTree = "<group>"; };
@@ -212,6 +220,12 @@
 		A5B019AA1BBE1B34003E00A6 /* TSEFindFourmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEFindFourmViewController.m; sourceTree = "<group>"; };
 		A5B019AC1BBE2007003E00A6 /* TSEChoiceFocusPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEChoiceFocusPost.h; sourceTree = "<group>"; };
 		A5B019AD1BBE2007003E00A6 /* TSEChoiceFocusPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEChoiceFocusPost.m; sourceTree = "<group>"; };
+		A5B396211BCBC921000BEC0C /* TSESeriesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESeriesInfoViewController.h; sourceTree = "<group>"; };
+		A5B396221BCBC921000BEC0C /* TSESeriesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESeriesInfoViewController.m; sourceTree = "<group>"; };
+		A5B396241BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESeriesInfoHeaderView.h; sourceTree = "<group>"; };
+		A5B396251BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESeriesInfoHeaderView.m; sourceTree = "<group>"; };
+		A5B396271BCBD3D5000BEC0C /* TSESeriesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESeriesInfo.h; sourceTree = "<group>"; };
+		A5B396281BCBD3D5000BEC0C /* TSESeriesInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESeriesInfo.m; sourceTree = "<group>"; };
 		A5B732F61BAFAE6D00DDEFB5 /* TSEHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEHttpTool.h; sourceTree = "<group>"; };
 		A5B732F71BAFAE6D00DDEFB5 /* TSEHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEHttpTool.m; sourceTree = "<group>"; };
 		A5B7337E1BAFC59000DDEFB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -226,6 +240,16 @@
 		A5BE0B411BB2B20B00EF298D /* TSEProfileCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEProfileCollectionCell.m; sourceTree = "<group>"; };
 		A5BE0B461BB2EFDA00EF298D /* TSEXCARLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEXCARLoopView.h; sourceTree = "<group>"; };
 		A5BE0B471BB2EFDA00EF298D /* TSEXCARLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEXCARLoopView.m; sourceTree = "<group>"; };
+		A5BF08A51BCC9A66005D8AA8 /* TSESaleSubSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSESaleSubSeries.h; sourceTree = "<group>"; };
+		A5BF08A61BCC9A66005D8AA8 /* TSESaleSubSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSESaleSubSeries.m; sourceTree = "<group>"; };
+		A5BF08A81BCC9CAF005D8AA8 /* TSECarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSECarInfo.h; sourceTree = "<group>"; };
+		A5BF08A91BCC9CAF005D8AA8 /* TSECarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSECarInfo.m; sourceTree = "<group>"; };
+		A5BF08AB1BCCE1F4005D8AA8 /* TSECarInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSECarInfoView.h; sourceTree = "<group>"; };
+		A5BF08AC1BCCE1F4005D8AA8 /* TSECarInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSECarInfoView.m; sourceTree = "<group>"; };
+		A5BF08AE1BCCE20C005D8AA8 /* TSECarInfoCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSECarInfoCellFrame.h; sourceTree = "<group>"; };
+		A5BF08AF1BCCE20C005D8AA8 /* TSECarInfoCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSECarInfoCellFrame.m; sourceTree = "<group>"; };
+		A5BF08B11BCCE235005D8AA8 /* TSECarInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSECarInfoCell.h; sourceTree = "<group>"; };
+		A5BF08B21BCCE235005D8AA8 /* TSECarInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSECarInfoCell.m; sourceTree = "<group>"; };
 		A5C1E6931BB3DCEC0031EAD7 /* TSEHomeViewNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEHomeViewNewsCell.h; sourceTree = "<group>"; };
 		A5C1E6941BB3DCEC0031EAD7 /* TSEHomeViewNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEHomeViewNewsCell.m; sourceTree = "<group>"; };
 		A5C1E6961BB3DD080031EAD7 /* TSEHomeViewNewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEHomeViewNewsView.h; sourceTree = "<group>"; };
@@ -538,8 +562,10 @@
 				A556393C1BC14AE1002F8455 /* TSEBrandFindCarViewController.m */,
 				A57369C21BC9214D00B438D9 /* TSESubBrandCarViewController.h */,
 				A57369C31BC9214D00B438D9 /* TSESubBrandCarViewController.m */,
-				A556393E1BC14B19002F8455 /* TSEConditionFindCarViewController.h */,
-				A556393F1BC14B19002F8455 /* TSEConditionFindCarViewController.m */,
+				A5B396211BCBC921000BEC0C /* TSESeriesInfoViewController.h */,
+				A5B396221BCBC921000BEC0C /* TSESeriesInfoViewController.m */,
+				A57E162F1BCF96FC007D65D7 /* TSEConditionFindCarViewController.h */,
+				A57E16301BCF96FC007D65D7 /* TSEConditionFindCarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -557,6 +583,14 @@
 				A58246A61BC8DA950022F1B6 /* TSESubBrand.m */,
 				A58246A81BC8DBC70022F1B6 /* TSESeries.h */,
 				A58246A91BC8DBC70022F1B6 /* TSESeries.m */,
+				A5B396271BCBD3D5000BEC0C /* TSESeriesInfo.h */,
+				A5B396281BCBD3D5000BEC0C /* TSESeriesInfo.m */,
+				A5BF08A51BCC9A66005D8AA8 /* TSESaleSubSeries.h */,
+				A5BF08A61BCC9A66005D8AA8 /* TSESaleSubSeries.m */,
+				A5BF08A81BCC9CAF005D8AA8 /* TSECarInfo.h */,
+				A5BF08A91BCC9CAF005D8AA8 /* TSECarInfo.m */,
+				A5BF08AE1BCCE20C005D8AA8 /* TSECarInfoCellFrame.h */,
+				A5BF08AF1BCCE20C005D8AA8 /* TSECarInfoCellFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -572,6 +606,12 @@
 				A55C29411BC204480016547B /* TSEBrandFindCarViewCell.m */,
 				A582469F1BC7BB680022F1B6 /* TSESubBrandCarCell.h */,
 				A58246A01BC7BB680022F1B6 /* TSESubBrandCarCell.m */,
+				A5B396241BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.h */,
+				A5B396251BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.m */,
+				A5BF08B11BCCE235005D8AA8 /* TSECarInfoCell.h */,
+				A5BF08B21BCCE235005D8AA8 /* TSECarInfoCell.m */,
+				A5BF08AB1BCCE1F4005D8AA8 /* TSECarInfoView.h */,
+				A5BF08AC1BCCE1F4005D8AA8 /* TSECarInfoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -889,11 +929,14 @@
 				A54221F31BB05180008983EE /* TSEEventNewsCellFrame.m in Sources */,
 				A52294831BC55FB10029C76B /* TSEProfileSectionView.m in Sources */,
 				A55C29561BC3C9270016547B /* WMProgressView.m in Sources */,
+				A5BF08A71BCC9A66005D8AA8 /* TSESaleSubSeries.m in Sources */,
+				A5BF08B01BCCE20C005D8AA8 /* TSECarInfoCellFrame.m in Sources */,
 				A5B732F81BAFAE6D00DDEFB5 /* TSEHttpTool.m in Sources */,
 				A5B019AB1BBE1B34003E00A6 /* TSEFindFourmViewController.m in Sources */,
 				A563728D1BBFBF2F00DE9FCF /* TSEChoicePost.m in Sources */,
 				A54222051BB139D8008983EE /* TSEDiscountNewsCellFrame.m in Sources */,
 				A55639251BC0CC7C002F8455 /* TSEDepreciateNews.m in Sources */,
+				A5BF08B31BCCE235005D8AA8 /* TSECarInfoCell.m in Sources */,
 				A5C7D4E71BAFA4D3001BF201 /* TSEGuideViewController.m in Sources */,
 				A56372901BBFE6B400DE9FCF /* TSEHotPostHeaderView.m in Sources */,
 				A5C1E6A11BB3EA260031EAD7 /* TSELatestFocusNews.m in Sources */,
@@ -921,7 +964,6 @@
 				A5C1E6951BB3DCEC0031EAD7 /* TSEHomeViewNewsCell.m in Sources */,
 				A55C29571BC3C9270016547B /* WMPageController.m in Sources */,
 				A5C7D4711BAF8FE7001BF201 /* TSENavigationController.m in Sources */,
-				A55639401BC14B19002F8455 /* TSEConditionFindCarViewController.m in Sources */,
 				A5BE0B421BB2B20B00EF298D /* TSEProfileCollectionCell.m in Sources */,
 				A54221F91BB051B8008983EE /* TSEEventNewsView.m in Sources */,
 				A52294861BC560810029C76B /* TSEFindCarSectionView.m in Sources */,
@@ -934,6 +976,7 @@
 				A5C1E69E1BB3E0F40031EAD7 /* TSEHomeViewNews.m in Sources */,
 				A5C7D4761BAF8FE7001BF201 /* main.m in Sources */,
 				A5B019AE1BBE2007003E00A6 /* TSEChoiceFocusPost.m in Sources */,
+				A5B396291BCBD3D5000BEC0C /* TSESeriesInfo.m in Sources */,
 				A55639311BC1148F002F8455 /* TSEFindForumView.m in Sources */,
 				A5C1E69B1BB3DD390031EAD7 /* TSEHomeViewNewsCellFrame.m in Sources */,
 				A5BE0B301BB17DC400EF298D /* TSESlideCityView.m in Sources */,
@@ -943,17 +986,22 @@
 				A5C7D4EA1BAFA508001BF201 /* TSEEvaluatingViewController.m in Sources */,
 				A556392E1BC0CCDF002F8455 /* TSEDepreciateNewsView.m in Sources */,
 				A56372991BBFF7A700DE9FCF /* TSEHotPostCellFrame.m in Sources */,
+				A5B396231BCBC921000BEC0C /* TSESeriesInfoViewController.m in Sources */,
 				A57369C41BC9214D00B438D9 /* TSESubBrandCarViewController.m in Sources */,
 				A5C7D4931BAF9127001BF201 /* TSEProfileViewController.m in Sources */,
 				A54221E41BB020EA008983EE /* TSEApplyViewController.m in Sources */,
 				A58246AA1BC8DBC70022F1B6 /* TSESeries.m in Sources */,
 				A556393D1BC14AE1002F8455 /* TSEBrandFindCarViewController.m in Sources */,
+				A5BF08AD1BCCE1F4005D8AA8 /* TSECarInfoView.m in Sources */,
 				A542220B1BB13ADC008983EE /* TSEDiscountNewsCell.m in Sources */,
 				A5C7D4751BAF8FE7001BF201 /* AppDelegate.m in Sources */,
+				A5B396261BCBCFFF000BEC0C /* TSESeriesInfoHeaderView.m in Sources */,
 				A5BE0B481BB2EFDA00EF298D /* TSEXCARLoopView.m in Sources */,
 				A5C1E6A41BB539C20031EAD7 /* TSEWebViewController.m in Sources */,
+				A57E16311BCF96FC007D65D7 /* TSEConditionFindCarViewController.m in Sources */,
 				A54222021BB1323F008983EE /* TSEDiscountNews.m in Sources */,
 				A5B019A81BBE1B17003E00A6 /* TSEHotPostsViewController.m in Sources */,
+				A5BF08AA1BCC9CAF005D8AA8 /* TSECarInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

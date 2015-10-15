@@ -19,4 +19,7 @@
 /** 子品牌车型系列价钱 */
 @property (nonatomic, copy) NSString *seriesPrice;
 
+/** 子品牌车型id */
+@property (nonatomic, copy) NSString *seriesId;
+
 @end

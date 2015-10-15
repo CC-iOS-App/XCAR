@@ -24,7 +24,7 @@
 
 #import "Public.h"
 
-@interface TSEBrandFindCarViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TSEBrandFindCarViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) TSEFindCarHeaderView *headerView;
 @property (nonatomic, weak) UITableView *tableView;
@@ -85,7 +85,6 @@ static NSString * const CellIdentifier = @"BrandCar";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TSEBrandFindCarViewCell *cell = [TSEBrandFindCarViewCell cellWithTableView:tableView];
-    // 3.设置cell的属性
     TSEBrandCar *car = self.brands[indexPath.section];
     TSEBrand *brand = car.brands[indexPath.row];
     
@@ -144,6 +143,14 @@ static NSString * const CellIdentifier = @"BrandCar";
         [indexTitles addObject:car.letter];
     }
     return indexTitles;
+}
+
+#pragma mark Gesture Recognizer Delegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch  {
+    if([touch.view isKindOfClass:[self class]]){
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - private method

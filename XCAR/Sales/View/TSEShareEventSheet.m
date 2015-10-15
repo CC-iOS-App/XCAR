@@ -187,7 +187,7 @@
     if(!showVC){
         // 获取当前视图的控制器
         [[UIApplication sharedApplication].delegate.window.rootViewController.view addSubview:self];
-    }else{
+    } else { 
         [showVC.view addSubview:self];
     }
 }

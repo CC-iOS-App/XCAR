@@ -12,7 +12,7 @@
 @implementation TSEBrandCar
 
 // 字典中包含字典
-// 将返回的json的字典的key作为为key，字典中的字典的数据类作为值
+// 将返回的json的字典的key作为key，字典中的字典的数据类作为值
 + (NSDictionary *)objectClassInArray {
     return @{@"brands" : @"TSEBrand"};
 }
