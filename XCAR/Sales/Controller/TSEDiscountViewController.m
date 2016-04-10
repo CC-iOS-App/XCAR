@@ -50,7 +50,7 @@
 
 - (void)requestSalesListData {
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    paras[CITYID] = @475;
+    paras[kCityID] = @475;
     
     [TSEHttpTool get:kGetSalesByCityId params:paras success:^(id json) {
 //        TSELog(@"salesList--------/n%@", json);
@@ -128,7 +128,7 @@
     // 取消cell的分割线
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     // 为tableView增加额外的滚动区域
-    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, TableViewContentInset, 0.0)];
+    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, kTableViewContentInset, 0.0)];
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];

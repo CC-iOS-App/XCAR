@@ -110,11 +110,11 @@
 - (void)requestMoreChoiceNewsData {
     _count += 10;
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    paras[LIMIT] = @10;
+    paras[kLimit] = @10;
     _offset = _count; // 每次上拉刷新参数"offset"会动态加10
-    paras[OFFSET] = [NSString stringWithFormat:@"%d", _offset];
-    paras[TYPE] = @1;
-    paras[VER] = @"6.2";
+    paras[kOffset] = [NSString stringWithFormat:@"%d", _offset];
+    paras[kType] = @1;
+    paras[kVer] = @"6.2";
     
     [TSEHttpTool get:kGetForumInfoURL params:paras success:^(id json) {
         // 通过数组字典返回模型，该数组中装的都是TSEChoicePost模型
@@ -203,10 +203,10 @@
 - (NSMutableDictionary *)paras {
     if (!_paras) {
         _paras = [NSMutableDictionary dictionary];
-        _paras[LIMIT] = @20;
-        _paras[OFFSET] = @0;
-        _paras[TYPE] = @1;
-        _paras[VER] = @"6.2";
+        _paras[kLimit] = @20;
+        _paras[kOffset] = @0;
+        _paras[kType] = @1;
+        _paras[kVer] = @"6.2";
     }
     return _paras;
 }

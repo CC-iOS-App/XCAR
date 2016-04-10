@@ -81,7 +81,7 @@
 
 - (void)requestLatestNews {
     [TSEHttpTool get:kGetCarNewsURL params:self.paras success:^(id json) {
-//        TSELog(@"carnews------/n%@", json);
+        TSELog(@"carnews------/n%@", json);
         
         // 获取滚动新闻
         self.foucsNews = [TSELatestFocusNews objectArrayWithKeyValuesArray:json[@"focusList"][@"focusImgs"]];
@@ -90,6 +90,7 @@
         
         // 通过数组字典返回模型，该数组中装的都是TSEHomeViewNews模型
         NSArray *latestNewsArr = [TSEHomeViewNews objectArrayWithKeyValuesArray:json[@"newsList"]];
+        
         // 创建frame模型对象
         NSMutableArray *newsArray = [NSMutableArray array];
         for (TSEHomeViewNews *news in latestNewsArr) {
@@ -117,11 +118,11 @@
 - (void)requestMoreLatestNews {
     _count += 10;
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    paras[LIMIT] = @10;
+    paras[kLimit] = @10;
     _offset = _count; // 每次上拉刷新参数"offset"会动态加10
-    paras[OFFSET] = [NSString stringWithFormat:@"%d", _offset];
-    paras[TYPE] = @1;
-    paras[VER] = @"6.2";
+    paras[kOffset] = [NSString stringWithFormat:@"%d", _offset];
+    paras[kType] = @1;
+    paras[kVer] = @"6.2";
     
     [TSEHttpTool get:kGetCarNewsURL params:paras success:^(id json) {
         
@@ -178,7 +179,7 @@
 - (void)setupTableView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 20.0, ScreenWidth, ScreenHeight) style:UITableViewStyleGrouped];
     // 设置tableView的额外滚动区域
-    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, TableViewContentInset, 0.0)];
+    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, kTableViewContentInset, 0.0)];
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [tableView setBackgroundColor:TSEColor(248, 248, 248)];
     tableView.delegate = self;
@@ -237,10 +238,10 @@
 - (NSMutableDictionary *)paras {
     if (!_paras) {
         _paras = [NSMutableDictionary dictionary];
-        _paras[LIMIT] = @30;
-        _paras[OFFSET] = @0;
-        _paras[TYPE] = @1;
-        _paras[VER] = @"6.2";
+        _paras[kLimit] = @30;
+        _paras[kOffset] = @0;
+        _paras[kType] = @1;
+        _paras[kVer] = @"6.2";
     }
     
     return _paras;

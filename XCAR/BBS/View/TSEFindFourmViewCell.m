@@ -30,7 +30,6 @@
 
 - (void)setInfoLabelTextWithTag:(NSInteger)tag {
     [self.forumTitles enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        
         key = [NSNumber numberWithInteger:tag];
         self.infoLabel = [[UILabel alloc] init];
         [self.infoLabel setText:self.forumTitles[key]];

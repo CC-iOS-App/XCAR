@@ -81,14 +81,12 @@
     /** 新闻评论(image) */
     UIImageView *commentView = [[UIImageView alloc] init];
     [self addSubview:commentView];
-//    [commentView setBackgroundColor:[UIColor orangeColor]];
     self.commentView = commentView;
     
     /** 新闻评论 */
     UILabel *commentLabel = [[UILabel alloc] init];
     commentLabel.textColor = kSubtitleColor;
     [commentLabel setFont:kHomeViewNewsCommentFont];
-//    [commentLabel setBackgroundColor:[UIColor orangeColor]];
     [self addSubview:commentLabel];
     self.commentLabel = commentLabel;
     
@@ -142,26 +140,8 @@
     }
     
     /** 新闻发布时间 */
-    if (news.pubTime) {
-        
-        // 20150924
-        NSString *pubTimeStr = [NSString stringWithFormat:@"%ld", news.pubTime];
-        NSInteger yLocation = 0;
-        NSInteger yLength = 4;
-        NSString *year = [pubTimeStr substringWithRange:NSMakeRange(yLocation, yLength)];
-        
-        NSInteger mLocation = 4;
-        NSInteger mLength = 2;
-        NSString *month = [pubTimeStr substringWithRange:NSMakeRange(mLocation, mLength)];
-        
-        NSInteger dLocation = 6;
-        NSInteger dLength = 2;
-        NSString *day = [pubTimeStr substringWithRange:NSMakeRange(dLocation, dLength)];
-        
-        self.pubTimeLabel.frame = homeViewNewsCellFrame.pubTimeLabelFrame;
-        NSString *pubTime = [NSString stringWithFormat:@"%@-%@-%@", year, month, day];
-        [self.pubTimeLabel setText:pubTime];
-    }
+    self.pubTimeLabel.frame = homeViewNewsCellFrame.pubTimeLabelFrame;
+    self.pubTimeLabel.text = news.newsCreateTime;
     
     /** 分割线 */
     self.separatorView.frame = homeViewNewsCellFrame.separatorViewFrame;

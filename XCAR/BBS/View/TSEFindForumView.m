@@ -8,11 +8,16 @@
 
 #import "TSEFindForumView.h"
 #import "TSEFindFourmViewCell.h"
+#import "TSENavigationController.h"
+#import "TSESubTableViewController.h"
+#import "TSEBarButtonItem.h"
 #import "Public.h"
 
 @interface TSEFindForumView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) UICollectionView *collectionView;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, weak) UIView *bgView;
 
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *titles;
@@ -21,14 +26,14 @@
 
 @implementation TSEFindForumView
 
-static NSString *const CellIdentifier = @"FindFourm";
+static NSString * const kCollectionCellIdentifier = @"COLLECTIONVIEWCELL";
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         [self setBackgroundColor:TSEColor(248, 248, 248)];
         [self setupFindForumView];
-        [self.collectionView registerClass:[TSEFindFourmViewCell class] forCellWithReuseIdentifier:CellIdentifier];
+        [self.collectionView registerClass:[TSEFindFourmViewCell class] forCellWithReuseIdentifier:kCollectionCellIdentifier];
     }
     return self;
 }
@@ -40,16 +45,16 @@ static NSString *const CellIdentifier = @"FindFourm";
     CGFloat imageGap = 15.0;
     
     for (NSInteger i = 0; i < [self.images count]; i++) {
-        UIView *btn = [[UIView alloc] init];
-        [btn.layer setBorderColor:TSEColor(224, 224, 224).CGColor];
-        [btn.layer setBorderWidth:0.4];
-        [btn setFrame:CGRectMake(btnWidth * i, 2 * widgetGap, btnWidth, btnHeight)];
-        [btn setBackgroundColor:[UIColor whiteColor]];
+        UIView *btnView = [[UIView alloc] init];
+        [btnView.layer setBorderColor:TSEColor(224, 224, 224).CGColor];
+        [btnView.layer setBorderWidth:0.4];
+        [btnView setFrame:CGRectMake(btnWidth * i, 2 * widgetGap, btnWidth, btnHeight)];
+        [btnView setBackgroundColor:[UIColor whiteColor]];
         
         UIImage *image = self.images[i];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         [imageView setFrame:CGRectMake(btnWidth / 2 - image.size.width / 1.6, 8.0, btnWidth - 2 * imageGap, btnWidth - 2 * imageGap)];
-        [btn addSubview:imageView];
+        [btnView addSubview:imageView];
         
         UILabel *label = [[UILabel alloc] init];
         [label setText:self.titles[i]];
@@ -58,20 +63,20 @@ static NSString *const CellIdentifier = @"FindFourm";
         CGSize size = [label.text sizeWithAttributes:attrs];
         [label setFrame:CGRectMake(btnWidth / 2 - size.width / 2, CGRectGetMaxY(imageView.frame) + 5.0, size.width, size.height)];
         [label setTextColor:TSEColor(137, 137, 146)];
-        [btn addSubview:label];
+        [btnView addSubview:label];
         
-        btn.tag = i;
-        if (btn.tag == 0) {
+        btnView.tag = i;
+        if (btnView.tag == 0) {
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clubIconClicked:)];
-            [btn addGestureRecognizer:tap];
-        } else if (btn.tag == 1) {
+            [btnView addGestureRecognizer:tap];
+        } else if (btnView.tag == 1) {
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diFangIconClicked:)];
-            [btn addGestureRecognizer:tap];
-        } else if (btn.tag == 2) {
+            [btnView addGestureRecognizer:tap];
+        } else if (btnView.tag == 2) {
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lifeIconClicked:)];
-            [btn addGestureRecognizer:tap];
+            [btnView addGestureRecognizer:tap];
         }
-        [self addSubview:btn];
+        [self addSubview:btnView];
     }
     
     // 推荐论坛
@@ -103,7 +108,12 @@ static NSString *const CellIdentifier = @"FindFourm";
         itemHeight = 55.0;
     }
     [layout setItemSize:CGSizeMake((ScreenWidth - 4 * widgetGap) / 2, itemHeight)];
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(widgetGap, CGRectGetMaxY(commendImageView.frame) + widgetGap, ScreenWidth - 2 * widgetGap, ScreenHeight - (CGRectGetMaxY(commendImageView.frame) + widgetGap)) collectionViewLayout:layout];
+    
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(widgetGap,
+                                                                                          CGRectGetMaxY(commendImageView.frame) + widgetGap,
+                                                                                          ScreenWidth - 2 * widgetGap,
+                                                                                          ScreenHeight - (CGRectGetMaxY(commendImageView.frame) + widgetGap))
+                                                          collectionViewLayout:layout];
     collectionView.dataSource = self;
     collectionView.delegate = self;
     [collectionView setBackgroundColor:TSEColor(248, 248, 248)];
@@ -117,7 +127,7 @@ static NSString *const CellIdentifier = @"FindFourm";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TSEFindFourmViewCell *cell = (TSEFindFourmViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    TSEFindFourmViewCell *cell = (TSEFindFourmViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCellIdentifier forIndexPath:indexPath];
     [cell setInfoLabelTextWithTag:indexPath.item];
     
     return cell;
@@ -128,9 +138,34 @@ static NSString *const CellIdentifier = @"FindFourm";
     TSELog(@"selected index%ld", indexPath.item);
 }
 
-
+#pragma mark - Gesture method
 - (void)clubIconClicked:(UITapGestureRecognizer *)gr {
     TSELog(@"clubIconClicked");
+    // 创建一个新的窗口，以此窗口来容纳显示子品牌的控制器
+    UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth / 6 * 5, ScreenHeight)];
+    window.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.7];
+    window.windowLevel = UIWindowLevelNormal;
+    window.hidden = NO;
+    [window makeKeyAndVisible];
+    TSESubTableViewController *subTableViewCtr = [[TSESubTableViewController alloc] init];
+    TSENavigationController *nav = [[TSENavigationController alloc] initWithRootViewController:subTableViewCtr];
+    subTableViewCtr.title = @"unknown";
+    subTableViewCtr.navigationItem.rightBarButtonItem = [TSEBarButtonItem barButtonWithTitle:@"返回" target:self action:@selector(tapAction)];
+    window.rootViewController = nav;
+    self.window = window;
+    
+    // 设置背景阴影
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth, ScreenHeight)];
+    [UIView animateWithDuration:0.25 animations:^{
+        [window setFrame:CGRectMake(ScreenWidth - ScreenWidth / 6 * 5, 0.0, ScreenWidth / 6 * 5, ScreenHeight)];
+        [bgView setFrame:self.bounds];
+    }];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    // 点击手势 销毁当前显示子品牌的窗口和背景阴影
+    UITapGestureRecognizer *tap  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [bgView addGestureRecognizer:tap];
+    [self addSubview:bgView];
+    self.bgView = bgView;
 }
 
 - (void)diFangIconClicked:(UITapGestureRecognizer *)gr {
@@ -139,6 +174,22 @@ static NSString *const CellIdentifier = @"FindFourm";
 
 - (void)lifeIconClicked:(UITapGestureRecognizer *)gr{
     TSELog(@"lifeIconClicked");
+}
+
+/**
+ *  点击手势 销毁当前显示子品牌的窗口和背景阴影
+ */
+- (void)tapAction{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bgView.alpha = 0;
+        [self.window setFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth / 6 * 5, ScreenHeight)];
+        [self.bgView setFrame:CGRectMake(ScreenWidth, 0.0, ScreenWidth, ScreenHeight)];
+    } completion:^(BOOL finished) {
+        [self.bgView removeFromSuperview];
+        [self.window resignKeyWindow];
+        self.window  = nil;
+        self.bgView = nil;
+    }];
 }
 
 #pragma mark - lazy load

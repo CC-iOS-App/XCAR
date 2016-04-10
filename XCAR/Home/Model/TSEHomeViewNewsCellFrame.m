@@ -8,6 +8,7 @@
 
 #import "TSEHomeViewNewsCellFrame.h"
 #import "TSEHomeViewNews.h"
+#import <UIView+SDAutoLayout.h>
 #import "Public.h"
 
 @implementation TSEHomeViewNewsCellFrame
@@ -43,40 +44,22 @@
     /** 新闻发布时间 */
     CGFloat pubTimeX = newsTitleX;
     CGFloat pubTimeY = CGRectGetMaxY(_newsImageFrame) - 3 * kHomeViewNewsCellMargin;
-    NSString *punTime = [NSString stringWithFormat:@"%ld---", homeViewNews.pubTime];
+    NSString *punTime = homeViewNews.newsCreateTime;
     NSDictionary *pubTimeAttrs = @{NSFontAttributeName : kHomeViewNewsCategoryFont};
     CGSize pubTimeSize = [punTime sizeWithAttributes:pubTimeAttrs];
-    if (homeViewNews.pubTime) {
-        _pubTimeLabelFrame = (CGRect){{pubTimeX, pubTimeY}, pubTimeSize};
-    }
+    _pubTimeLabelFrame = (CGRect){{pubTimeX, pubTimeY}, pubTimeSize};
     
     /** 新闻评论(image) */
     CGFloat commentViewX = CGRectGetMaxX(_pubTimeLabelFrame);
     CGFloat commentViewH = 11.0;
     CGFloat commentViewY = pubTimeY + commentViewH / 2.7;
     CGFloat commentViewW = 11.0;
-    if (homeViewNews.pubTime) {
-        if (ScreenWidth == ScreenWidth5S) {
-            _commentViewFrame = CGRectMake(commentViewX, commentViewY, commentViewW, commentViewH);
-        } else if (ScreenWidth == ScreenWidth6) {
-            _commentViewFrame = CGRectMake(commentViewX + 3 * kHomeViewNewsCellMargin, commentViewY, commentViewW, commentViewH);
-        } else if (ScreenWidth == ScreenWidth6plus) {
-            _commentViewFrame = CGRectMake(commentViewX + 5 * kHomeViewNewsCellMargin, commentViewY, commentViewW, commentViewH);
-        }
-    } else {
-        if (ScreenWidth == ScreenWidth5S) {
-            commentViewX = CGRectGetMaxX(_newsImageFrame) + 2 * kHomeViewNewsCellMargin;
-            commentViewY = CGRectGetMaxY(_newsImageFrame) - 2.7 * kHomeViewNewsCellMargin;
-            _commentViewFrame = CGRectMake(commentViewX, commentViewY, commentViewW, commentViewH);
-        } else if (ScreenWidth == ScreenWidth6) {
-            commentViewX = CGRectGetMaxX(_newsImageFrame) + 5 * kHomeViewNewsCellMargin;
-            commentViewY = CGRectGetMaxY(_newsImageFrame) - 2.7 * kHomeViewNewsCellMargin;
-            _commentViewFrame = CGRectMake(commentViewX, commentViewY, commentViewW, commentViewH);
-        } else if (ScreenWidth == ScreenWidth6plus) {
-            commentViewX = CGRectGetMaxX(_newsImageFrame) + 7 * kHomeViewNewsCellMargin;
-            commentViewY = CGRectGetMaxY(_newsImageFrame) - 2.7 * kHomeViewNewsCellMargin;
-            _commentViewFrame = CGRectMake(commentViewX, commentViewY, commentViewW, commentViewH);
-        }
+    if (ScreenWidth == ScreenWidth5S) {
+        _commentViewFrame = CGRectMake(commentViewX, commentViewY, commentViewW, commentViewH);
+    } else if (ScreenWidth == ScreenWidth6) {
+        _commentViewFrame = CGRectMake(commentViewX + 3 * kHomeViewNewsCellMargin, commentViewY, commentViewW, commentViewH);
+    } else if (ScreenWidth == ScreenWidth6plus) {
+        _commentViewFrame = CGRectMake(commentViewX + 5 * kHomeViewNewsCellMargin, commentViewY, commentViewW, commentViewH);
     }
     
     /** 新闻评论 */

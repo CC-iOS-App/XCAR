@@ -112,11 +112,11 @@
 - (NSMutableDictionary *)paras {
     if (!_paras) {
         _paras = [NSMutableDictionary dictionary];
-        _paras[BRANDID] = @0;
-        _paras[CITYID] = @348;
-        _paras[PROVINCEID] = @30;
-        _paras[SERIESID] = @0;
-        _paras[SORTTYPE] = @1;
+        _paras[kBrandID] = @0;
+        _paras[kCityID] = @348;
+        _paras[kProvinceID] = @30;
+        _paras[kSeriesID] = @0;
+        _paras[kSortType] = @1;
     }
     return _paras;
 }
@@ -129,7 +129,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [tableView setScrollIndicatorInsets:UIEdgeInsetsMake(0.0, 0.0, TableViewContentInset, 0.0)];
+    [tableView setScrollIndicatorInsets:UIEdgeInsetsMake(0.0, 0.0, kTableViewContentInset, 0.0)];
     self.tableView = tableView;
     [self.view addSubview:tableView];
     [self.view addSubview:topView];

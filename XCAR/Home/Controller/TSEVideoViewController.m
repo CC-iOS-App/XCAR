@@ -73,10 +73,10 @@
 
 - (void)requesVideoNews {
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    paras[LIMIT] = @10;
-    paras[OFFSET] = @0;
-    paras[TYPE] = @144998;
-    paras[VER] = @"6.2";
+    paras[kLimit] = @10;
+    paras[kOffset] = @0;
+    paras[kType] = @144998;
+    paras[kType] = @"6.2";
     
     [TSEHttpTool get:kGetVideoCarNewsURL params:paras success:^(id json) {
 //        TSELog(@"carnews------/n%@", json);
@@ -108,11 +108,11 @@
 - (void)requestMoreVideoNews {
     _count += 10;
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    paras[LIMIT] = @10;
+    paras[kLimit] = @10;
     _offset = _count; // 每次上拉刷新参数"offset"会动态加10
-    paras[OFFSET] = [NSString stringWithFormat:@"%d", _offset];
-    paras[TYPE] = @144998;
-    paras[VER] = @"6.2";
+    paras[kOffset] = [NSString stringWithFormat:@"%d", _offset];
+    paras[kType] = @144998;
+    paras[kVer] = @"6.2";
     
     [TSEHttpTool get:kGetVideoCarNewsURL params:paras success:^(id json) {
         // 通过数组字典返回模型，该数组中装的都是XZMDoesticCarNews模型
@@ -175,10 +175,10 @@
 - (NSMutableDictionary *)paras {
     if (!_paras) {
         _paras = [NSMutableDictionary dictionary];
-        _paras[LIMIT] = @10;
-        _paras[OFFSET] = @0;
-        _paras[TYPE] = @1;
-        _paras[VER] = @"6.2";
+        _paras[kLimit] = @10;
+        _paras[kOffset] = @0;
+        _paras[kType] = @1;
+        _paras[kVer] = @"6.2";
     }
     
     return _paras;
@@ -187,7 +187,7 @@
 - (void)setupTableView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 20.0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
     // 设置tableView的额外滚动区域
-    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, TableViewContentInset, 0.0)];
+    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, kTableViewContentInset, 0.0)];
     [tableView setBackgroundColor:TSEColor(248, 248, 248)];
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     tableView.delegate = self;

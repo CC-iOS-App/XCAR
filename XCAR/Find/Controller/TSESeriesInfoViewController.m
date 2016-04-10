@@ -63,7 +63,7 @@
     TSESeries *serie = subBrand.series[self.indexPath.row];
     
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    paras[SERIESID] = serie.seriesId;
+    paras[kSeriesID] = serie.seriesId;
     
     [TSEHttpTool get:kGetSeriesInfoNewsURL params:paras success:^(id json) {
 //        TSELog(@"%@", json);

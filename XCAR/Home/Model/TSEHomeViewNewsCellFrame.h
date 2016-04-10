@@ -10,10 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "Public.h"
 
-/** HomeViewNewsCell的间距 */
-#define kHomeViewNewsCellMargin 6
-#define kHomeViewNewsTableViewMargin 1
-
 /** 副标题的颜色 */
 #define kSubtitleColor TSEColor(137, 138, 142)
 

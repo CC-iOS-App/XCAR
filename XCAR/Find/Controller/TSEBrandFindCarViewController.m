@@ -157,7 +157,7 @@ static NSString * const CellIdentifier = @"BrandCar";
 - (void)setupTableView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 20.0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
     // 设置tableView的额外滚动区域
-    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, TableViewContentInset, 0.0)];
+    [tableView setContentInset:UIEdgeInsetsMake(0.0, 0.0, kTableViewContentInset, 0.0)];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.sectionIndexColor = TSEColor(136, 140, 150);

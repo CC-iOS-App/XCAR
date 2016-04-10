@@ -62,7 +62,7 @@
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
     TSEBrandCar *car = brands[indexPath.section];
     TSEBrand *brand = car.brands[indexPath.row];
-    paras[BRANDID] = brand.ID;
+    paras[kBrandID] = brand.ID;
     
     [TSEHttpTool get:kGetCarSubBrandsURL params:paras success:^(id json) {
 //        TSELog(@"%@", json);
